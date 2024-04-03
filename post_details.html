@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post Details</title>
+
+    <style>
+        span{
+            font-weight: bold;
+            font-size: 1rem;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Post Details</h1>
+    <div id="postDetails">
+        
+    </div>
+
+    <script>
+        
+        const params = new URLSearchParams(window.location.search);
+        const postData = JSON.parse(params.get("postData"));
+
+        
+        const postDetails = document.getElementById("postDetails");
+        postDetails.innerHTML = `
+            <span>User ID:</span> ${postData.userId}
+            <br><br>
+            <span>Id:</span> ${postData.id}
+            <br><br>
+            <span>Title:</span> ${postData.title}
+            <br><br>
+            <span>Body:</span> ${postData.body}
+        `;
+    </script>
+</body>
+
+</html>
